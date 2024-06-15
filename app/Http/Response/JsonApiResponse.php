@@ -8,7 +8,7 @@ trait JsonApiResponse
     private function makeResponse(string $message, $data, int $status, $errors = [], array $headers = []): JsonResponse
     {
         $success = true;
-        $response = compact('message', 'data');
+        $response = compact('message', 'data', 'success');
 
         if($status >= 400) {
             $response['errors'] = $errors;
@@ -26,7 +26,7 @@ trait JsonApiResponse
         );
     }
 
-    public function success(string $message = 'Success', $data = [], int $code = 200) {
+    public function success(string $message = '', $data = [], int $code = 200) {
         return $this->makeResponse(message: $message, data: $data, status: $code);
     }
 
