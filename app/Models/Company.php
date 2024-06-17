@@ -15,6 +15,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int $registered_agent_type
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property State $state
+ * @property Agent $agent
  */
 class Company extends Model
 {
@@ -22,5 +24,15 @@ class Company extends Model
 
     protected $table    = 'companies';
     protected $fillable = ['user_id', 'state_id', 'registered_agent_id', 'name', 'registered_agent_type'];
-    protected $hidden   = ['registered_agent_type', 'created_at'];
+    protected $hidden   = ['registered_agent_type', 'updated_at'];
+
+    public function state()
+    {
+        return $this->belongsTo(State::class, 'state_id');
+    }
+
+    public function agent()
+    {
+        return $this->belongsTo(Agent::class, 'registered_agent_id');
+    }
 }

@@ -7,15 +7,11 @@ use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
 use App\Models\Company;
 use Src\Modules\Companies\Application\Creator;
+use Src\Modules\Companies\Application\Updater;
 use Symfony\Component\HttpFoundation\Response;
 
 class CompanyController extends Controller
 {
-    public function index()
-    {
-        //
-    }
-
     public function store(StoreCompanyRequest $request, Creator $useCase)
     {
         $useCase->__invoke(
@@ -27,18 +23,10 @@ class CompanyController extends Controller
         return $this->success(data: $useCase, code: Response::HTTP_CREATED);
     }
 
-    public function show(Company $company)
+    public function update(UpdateCompanyRequest $request, Company $company, Updater $useCase)
     {
-        //
-    }
+        $useCase->__invoke($company, $request->validated('assignThemselves'));
 
-    public function update(UpdateCompanyRequest $request, Company $company)
-    {
-        //
-    }
-
-    public function destroy(Company $company)
-    {
-        //
+        return $this->success(data: $useCase);
     }
 }

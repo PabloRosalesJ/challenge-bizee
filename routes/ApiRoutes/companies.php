@@ -5,4 +5,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(CompanyController::class)->group(function(){
     Route::post('/', 'store')->name('store');
-})->name('company.');
+    Route::put('/{company}', 'update')->name('update');
+})->name('companies.');

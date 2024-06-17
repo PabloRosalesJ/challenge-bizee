@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 
 /**
  * @property int $id
@@ -23,4 +24,5 @@ use Illuminate\Database\Eloquent\SoftDeletes;
     protected $table    = 'registered_agents';
     protected $fillable = ['state_id', 'name', 'email', 'capacity'];
     protected $hidden   = ['updated_at', 'deleted_at'];
+
 }

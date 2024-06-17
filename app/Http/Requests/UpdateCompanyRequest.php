@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateAgentRequest extends FormRequest
+class UpdateCompanyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return $this->route('company')->user_id === auth()->id();
     }
 
     /**
@@ -22,7 +22,7 @@ class UpdateAgentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'assignThemselves' => ['required', 'boolean'],
         ];
     }
 }
