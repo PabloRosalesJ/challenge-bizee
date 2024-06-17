@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('registered_agent_id')->nullable()->constrained('registered_agents', 'id')->onDelete('set null');
             $table->string('name')->unique();
             $table->enum('registered_agent_type', [1, 2])->comment('use 1 to registered agent and 2 to user entity');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
