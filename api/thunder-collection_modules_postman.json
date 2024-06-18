@@ -1,0 +1,208 @@
+{
+    "info": {
+        "_postman_id": "e3f0ad3f-b775-426a-b853-55f21706171a",
+        "name": "modules",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Companies",
+            "item": [
+                {
+                    "name": "Store",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "{{backend}}/companies",
+                            "path": [
+                                "companies"
+                            ],
+                            "host": [
+                                "{{backend}}"
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "*/*",
+                                "disabled": true
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYzFlYTc1ZjczYzU0NDM2ZWIzNDg1MTBkNTY0NjI5NGU1Y2ZlNTVhZmI4MDc2ZDFlMzZjNTUyZDEwMGU5ZGUyYzAyMDY5MWJiNjQ2YzRhYzciLCJpYXQiOjE3MTg1ODI1MTQuNzkyNDYzLCJuYmYiOjE3MTg1ODI1MTQuNzkyNDY3LCJleHAiOjE3MTg1ODYxMTQuNzUxODYzLCJzdWIiOiI1Iiwic2NvcGVzIjpbXX0.palrUmZoQgkgCKsJPuI8ZsU_wOJkZxlL0aEGCGTLsRmFGZBDGKVEdgS3rQEqOe6dV30Acl9eHa9UCjfFwd3tfokTgEU6TBOfjKTQV2O0vHzdNY9ujdZGkKzz4D-AgUd7_ml69WBs4cWnoArtna7RuZG2QmIkPo1FQm-PYiLXI9OIKmEIWACcp9H5v524ZmS-mEDb4hEBtPBbRYuIuQFXjN7pBfLJN5XVilk_c3Br0w3xdAQIQfUo-bajKNfrjMb8subL58ZaE8BsMprqK83Igzt-W_jlKj-bwa91LQygJhCIIRHUg05c3psdO8VJn6BEkHQK_meSAVPyI_u36P5rVzZA1DqLmmLx9nCJ1Sm1-MrfViaZ3dFvBjmy1UT-weaf2E4RPuJZpGei0ZjUsbbJijba5hlOlbiPgVEqN0yNolpLmF6y3KYnm0OPOg25kvRZJx_d-9kn5uzTuW_78akWWD5nbxUpPkFaWU4UwdRCYiM7i29hqVPu-GFUBQSVXiYdHyqGCIimR_sEU1lWXZYmjysk1isl323WzWm7ySgfu-R0pv7reIlch0N9FaPObOXHVs-87dNfNeXXvbTKmXLRL0tWgln8D9XsMafmAL6ASCbGgS8ek8Im9_Oj1Ml_il3_V7KKiBlBEgMjZ3WviMHlxM2FpDst4hsXrubGnU2ua6o",
+                                "disabled": true
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"state\": 2,\n  \"name\": \"Company for state 2 v6\",\n  \"assignThemselves\": false\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiMTE1NmY2NWQwMmI5NGMxZDY1Yzk2ZTI5NzgxZjRiM2VmMjMzMWI5OWYyNzMyZTgwOTNkMjM5N2E4YTE2MzAwNmQ1NjhjZTFlZTQyMjI0NzQiLCJpYXQiOjE3MTg2NzExMjEuOTczNzMsIm5iZiI6MTcxODY3MTEyMS45NzM3MzIsImV4cCI6MTcxODY3NDcyMS45NTMyMTksInN1YiI6IjUiLCJzY29wZXMiOltdfQ.Emm6VC9VtdeXOuq5i7QARbMHNT5_TOHYqKdV3oS-Jm7WvbgUyS7Ik_fqhjASstak4eoQljdWl5Khl0gDrdQ-8lLtj9lqH7eAIBfhMzWjgdOZ305VD-VenjPHCj2u3mghwappdmsZlz63DQ0nmNgFggBUC6XBnMI-KmG4_84canJHbnB7krMM9oEWz8n3_upf7baa2WF17kKofELeonEY215ZM0RrSPLvHIaunmPUlF754Xuo0N4Ur6nq0lNVeT547-KmSPcu-tWIgauqEMNbpElmuHaofLoTLD6ay8lbVW_vpXCVclvCwO5dzbOj_UondsCTMpegRG85WyUAnxbZLPb_Rii-DHxPwTRfKbyicT_y2e-qHsy6cReUTKswjImyhvm44ki_K-1AX_qBJP3NRdxydtXtJrHDUc7OlBi19ennovipS9kAVOS9v3g9DI-fbT4EGJPo8dhUNNtzh1ADCXypdjFMU4zQLGz7skNm0idUkcEM3g2py5TXPe56TFLthE-WU8X9_q9Gh747qwqhkv_x0WKIcy84-y8Ngd38p4TCellCqFIK-fxOUjU4_c9RNFJLitYgchUFMz0FfFX2DipCXaBs_fHDLcTWKjGG9-61tMH14HNZ3-XDFZzVWJW-PYCbFj3EgpG-0KiC8-oO2XvxRYLmlaIkE3qqAgFNTWg",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Re-assign agent",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "{{backend}}/companies/174",
+                            "path": [
+                                "companies",
+                                "174"
+                            ],
+                            "host": [
+                                "{{backend}}"
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "*/*",
+                                "disabled": true
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"assignThemselves\": false\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiM2U2YzE1NTYyNGYxYWJiOTVmYTI4ZGU5M2VlNGM3Nzc4ZjI3YmQ5MjQ3NDgyYTFiZmMxZmJlNmU4MDdkNjA0Nzk4MTYyNDM2MDZkZGRmZmMiLCJpYXQiOjE3MTg2NjcyOTguNTg4MDc2LCJuYmYiOjE3MTg2NjcyOTguNTg4MDc4LCJleHAiOjE3MTg2NzA4OTguNTU5MzIxLCJzdWIiOiI1Iiwic2NvcGVzIjpbXX0.RgR7bNU7R68FwevO16V6WBPEx0RCU2QoDo74pFL00L5TvfMAGfpdZyiQSLtJLFbMfmMr9U6nFhbh_cvic-WhmXslUf3GDr9qSlssNRYz43_OycjXF8i8mKD-7DO75vDymwHLzyWY-6XNkjncVZRgAr8JZOJbNZDlDso7MclFXq-ibIK7tA5L0XcRHRdhNbTIHncv7Brs3DZJzWma4_IL-ZyfGVUKIluqceXQzas7Hlzu5GJa4H-zApKdEJH6Ym8M4K58E8v-vsrPPE_C8nDsjRt0UVOGMt6bqdD0EfA67bCgYtBON5dL4vcp0t_71rauW_yRPxIQctpvLXQYy5U0-iZTJvTQT8Dz994Ok6ZR4zHyEj1PsLi5Ss6iOcvJ8l7uCOrGEBJr11l8meUvZ0nQn2pon0xX31mDAV-athGyIMcidOVrUpwrtDJoDWNLASGLCBAKuW0h5Ij07sARtC7P-CJnwbehUMzr5-A2f1m2I1VzuYwIRbYSEso2MXFPy2XXRspMYZlE7H5AB5O3RncUXLGeQMQhMNRbdT8i5xCwN6Cvp0IKHWFsrv78nZ00juSmOs_jsSgMmEbaWJUYSbnbJiJQ3_gZpfJ8qkKJmwlt6rYvNFLULwvYacbJt1McE9PXlbuyWpO7p3OlGcf4MoYpqi5DqkurcxMZUDoo9coPWdE",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Auth",
+            "item": [
+                {
+                    "name": "Login",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "{{backend}}/auth/login",
+                            "path": [
+                                "auth",
+                                "login"
+                            ],
+                            "host": [
+                                "{{backend}}"
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"email\": \"mail@mail.com\",\n  \"password\": \"password\"\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "States",
+            "item": [
+                {
+                    "name": "Check capacity",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{backend}}/states/:state/check-capacity",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "key": "state",
+                                    "value": "2"
+                                }
+                            ],
+                            "path": [
+                                "states",
+                                ":state",
+                                "check-capacity"
+                            ],
+                            "host": [
+                                "{{backend}}"
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNTZjMTlmMDQ5MDQ4MjY4MjA5MGNiZDk2NDg4Mzg5NjIzZmE3NTE2OTQ5ZjM3YWIwYmQyNWE3NmNmZThhODIzZjMzNDZkODcxYmNmYjk4MjQiLCJpYXQiOjE3MTg2NTQxNTcuNjY1MzY2LCJuYmYiOjE3MTg2NTQxNTcuNjY1MzcsImV4cCI6MTcxODY1Nzc1Ny41OTQzNzYsInN1YiI6IjUiLCJzY29wZXMiOltdfQ.gKlvOiphzeaA3YEVfarvGLCdSgXhJGBr0DRb2O3ZNKCPD9iw2ipa_p7GHNbE2ecd5bNreHAuyRaAeN5q1JRkAHxvjnd-8HBMfhocFWy-FtvTfVgMIeTfbkBMDl1AL0Q4DNqqd5y_MA3xbDvVuN5olWNL3wv2xP49Eod4DayZk-ugGXtcEsndq6MZVSMBaN50EMKGTYCZiihZL2Nw-lSigTQmZSFGrnWQNb36s2PkD4lfQafMAkwvM7s-ERKJqutYqPrXA6wMOiOImDg_XL8t45hvQTtTAYN6Ok-VuvTplgrftdP44sHR_XuV8EJTSVi9mYcENXemYrubNC9XBTZP_AkFIhPZZQ9UPI-HB1-itSODop9LziiuGdJY6fANJg4TDdqX0qxbXqFGkQe0nQStClXEbLS49u_cVVVU9kwY4dReXw77AxbfCCRofv9Noj6yksNlmJLhJ5_vttidRJMkXHk1VyVs31uY92h9BTbcqY1IdE6zbvGM7Ws1dfAZPNkT01UoVq1EbJtNqqLE3RVY0sejm0nujNoTWRwngjIjMy2Pw8V4FZvIlM2m-WXoIa6uFAZNEqn8vNZcv70xYRkCl5AIWRRckgUsqnlHEeqj6c_lfp0USRasPltba48QAgMT3t0sFfA-Sr18ptDGnHTGjhYf6x5G3f2RwmjmYqzUlhI",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
