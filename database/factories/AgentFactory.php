@@ -16,7 +16,7 @@ class AgentFactory extends Factory
     public function definition(): array
     {
         return [
-            'state_id' => \App\Models\State::where('code', '!=', 'IL')->inRandomOrder()->first()->id,
+            'state_id' => \App\Models\State::where('active', true)->inRandomOrder()->first()->id,
             'name'     => fake()->name(),
             'email'    => fake()->safeEmail(),
             'capacity' => fake()->numberBetween(5,15),

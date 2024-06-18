@@ -19,3 +19,7 @@ Edit the vars:
 - QUEUE_CONNECTION=redis
 - ADMIN_EMAIL=
 - LIMIT_OF_COMPANIES_ASSIGNED_TO_AN_AGENT= -> (X%)
+
+
+# Api Docs
+The API documentation is located in the ./api folder

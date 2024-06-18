@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\State;
 use Database\Seeders\StateSeeder;
 use Illuminate\Database\Seeder;
 
@@ -12,29 +11,15 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      */
-    public function run(): void
+     public function run(): void
     {
-        // --- Users
-        \App\Models\User::factory(4)->create();
-        \App\Models\User::factory()->create([
-            'name' => 'Pablo Rosales',
-            'email' => 'mail@mail.com',
-        ]);
+        $this->call(UserSeeder::class);
 
-        // --- States
         $this->call(StateSeeder::class);
 
-        // --- Agents
-        \App\Models\Agent::factory()->count(2)->create([
-            'state_id' => State::where('code', 'CA')->first()->id,
-        ]);
-        \App\Models\Agent::factory()->count(2)->create([
-            'state_id' => State::where('code', 'TX')->first()->id,
-        ]);
+        $this->call(AgentSeeder::class);
 
-        \App\Models\Agent::factory()->count(47)->create();
-
-        // --- Companies
-        \App\Models\Company::factory()->count(5)->create();
+        $this->call(CompanySeeder::class);
     }
+
 }
