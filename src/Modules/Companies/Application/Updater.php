@@ -3,6 +3,7 @@ declare(strict_types= 1);
 
 namespace Src\Modules\Companies\Application;
 
+use App\Events\Agents\AgentHasBeenSelected;
 use App\Models\Agent;
 use App\Models\Company;
 use App\Models\State;
@@ -43,6 +44,10 @@ final class Updater implements \JsonSerializable {
                 'assignThemselves' => $assignThemselves,
                 'assigned'         => $agent ?? auth()->user()
             ];
+
+            if ($agent) {
+                event(new AgentHasBeenSelected($agent, $company));
+            }
 
             DB::commit();
         } catch (\Throwable $th) {

@@ -25,4 +25,20 @@ use Illuminate\Support\Facades\DB;
     protected $fillable = ['state_id', 'name', 'email', 'capacity'];
     protected $hidden   = ['updated_at', 'deleted_at'];
 
+    public function companies()
+    {
+        return $this->hasMany(Company::class, 'registered_agent_id','id');
+    }
+
+    public function taken() {
+        $this->loadCount('companies');
+        return ($this['companies_count'] * 100) / $this->capacity;
+    }
+
+    public function theLimitWasExceeded(): bool {
+        $limit = env('LIMIT_OF_COMPANIES_ASSIGNED_TO_AN_AGENT');
+
+        return ceil($this->taken()) >= $limit;
+    }
+
 }

@@ -3,6 +3,7 @@ declare(strict_types= 1);
 
 namespace Src\Modules\Companies\Application;
 
+use App\Events\Agents\AgentHasBeenSelected;
 use App\Models\Company;
 use App\Models\State;
 use Illuminate\Support\Facades\DB;
@@ -31,8 +32,6 @@ final class Creator implements \JsonSerializable {
             $agent = $assignThemselves ? null : $this->agentResolver->__invoke($state);
             $type  = $agent ? 1 : 2;
 
-            // TODO: Emit event AgentHasBeenSelected
-
             $this->response = Company::query()->create([
                 'user_id'               => auth()->id(),
                 'state_id'              => $state->id,
@@ -40,6 +39,10 @@ final class Creator implements \JsonSerializable {
                 'name'                  => $companyName,
                 'registered_agent_type' => $type
             ]);
+
+            if ($agent) {
+                event(new AgentHasBeenSelected($agent, $this->response));
+            }
 
             DB::commit();
         } catch (\Throwable $th) {
