@@ -25,7 +25,6 @@ final class CapacityChecker implements \JsonSerializable
             DB::beginTransaction();
 
             $state->loadSum('agents', 'capacity')
-            ->lockForUpdate()
             ->loadCount(['companies' => fn(Builder $q)  =>
                 $q->join(
                     $agentTable,
@@ -34,15 +33,16 @@ final class CapacityChecker implements \JsonSerializable
                         ->where('a.state_id', $state->id)
                         ->whereNull('a.deleted_at')
                 )
-            ]);
+            ])->lockForUpdate();
 
             $this->response = [
                 'name'=> $state->name,
                 'code'=> $state->code,
                 'hasCapacity'=> $state['companies_count'] < $state['agents_sum_capacity'],
+                // 'state'=> $state,
             ];
         } catch (\Throwable $th) {
-            Log::error($th->getMessage(), $th->getTrace());
+            Log::error($th->getMessage(), ['err' => $th->getTraceAsString()]);
         } finally {
             DB::commit();
         }
