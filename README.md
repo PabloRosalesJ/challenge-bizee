@@ -12,3 +12,10 @@ docker-compose exec app chown www-data: storage/oauth-*.key
 - DB_USERNAME=root
 - DB_PASSWORD=root
 - REDIS_HOST=redis
+
+# App config (.env)
+Edit the vars:
+
+- QUEUE_CONNECTION=redis
+- ADMIN_EMAIL=
+- LIMIT_OF_COMPANIES_ASSIGNED_TO_AN_AGENT= -> (X%)
