@@ -2,7 +2,8 @@
 docker-compose up --build -d
 
 ### Configure passport
-docker-compose exec app php artisan passport:install
+docker-compose exec app php artisan migrate --seed \
+docker-compose exec app php artisan passport:install \
 docker-compose exec app chown www-data: storage/oauth-*.key
 
 # Database credentials
@@ -20,6 +21,8 @@ Edit the vars:
 - ADMIN_EMAIL=
 - LIMIT_OF_COMPANIES_ASSIGNED_TO_AN_AGENT= -> (X%)
 
-
 # Api Docs
 The API documentation is located in the ./api folder
+
+# Run tests
+docker-compose exec -it app php artisan test
